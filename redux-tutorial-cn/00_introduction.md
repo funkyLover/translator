@@ -58,3 +58,33 @@
 和每个action都有其回调来直接操作`Models`和`View`不同,flux架构确保所有的
 action的完成过程中调用`dispatcher`,然后改变`store`,最后所有`store`的`watcher`(观察者)都会被通知
 
+为了弄清楚MVC与flux架构之间的区别,我们会引用一个MVC应用中的经典用例:
+在一个典型的MVC应用中,容易出现以下情况
+
+1. 用户点击`A按钮`
+2. `A按钮`的点击事件回调会促使`A model`产生变化
+3. `A model`的状态变化回调会促使`B model`产生变化
+4. `B model`的状态变化回调会促使`B View`变化并重新渲染
+
+可想而知当出错时要在上面的用例中debug会相当的困难,不过多久,上面的用例
+就会演变成所有的`View`都可以监听所有的`Model`,而所有的`Model`都可以监听其他的`Model`,
+所以基本上数据可能来自非常多地方及能被多个数据源所改变.
+
+但是当使用flux架构及其单向数据流的思想,上面的用例会变成:
+
+1. 用户点击`按钮A`
+2. `按钮A`的点击回调中会触发一个`action`,这个`action`会被`dispatche`及使`Store A`产生变化
+3. 由于所有的`store`也会被`action`所通知,所以`Store B`也会对同一个`action`产生响应
+4. `View B`监测到`Store A`和`Store B`的改变及做出响应重新渲染
+
+看看我们怎么避开了直接连接`Store A`和`Store B`?
+每一个`store` 只能被`action`所改变.而且只要所有的`store`都完成对`action`的响应, `views`就会进行更新.
+到此为止,数据的流向都是单向的
+
+> action -> store -> view -> action -> store -> view....
+
+就像上例的数据流向由`action`开始一样,我们也从`actions / action creators`来开始我们的教程
+
+前往下一章节:[01_simple-action-creator]()
+
+
