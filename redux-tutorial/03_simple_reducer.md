@@ -30,4 +30,4 @@ var store_1 = createStore(reducer)
 
 但是在redux触发`init action`之后,应用的`state`又是什么呢?
 
-前往下一章节:[04_get-state]()
+前往下一章节:[04_get-state](https://github.com/funkyLover/article/blob/master/redux-tutorial/04_get-state.md)

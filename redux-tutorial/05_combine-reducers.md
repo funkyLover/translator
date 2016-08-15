@@ -78,7 +78,22 @@ var itemsReducer = function (state = [], action) {
 // 这简直太简单了,我们使用redux的`combineReducers`函数
 // combineReducers会给reducer打上hash及返回一个最终的reducer函数,这个最终的reducer函数可以调用各个子reducer,处理state中相应的部分,并把它们的结果重新合并成到redux中存放的state对象中去.
 
-// 长话短说,
+// 长话短说,下面演示如何用多个reducers来创建redux实例
+import { createStore, combineReducers } from 'redux'
 
+var reducer = combineReducers({
+    user: userReducer,
+    items: itemsReducer
+})
+
+// 输出:
+// userReducer was called with state {} and action { type: '@@redux/INIT' }
+// userReducer was called with state {} and action { type: '@@redux/PROBE_UNKNOWN_ACTION_9.r.k.r.i.c.n.m.i' }
+// itemsReducer was called with state [] and action { type: '@@redux/INIT' }
+// itemsReducer was called with state [] and action { type: '@@redux/PROBE_UNKNOWN_ACTION_4.f.i.z.l.3.7.s.y.v.i' }
+var store_0 = createStore(reducer)
+// 输出:
+// userReducer was called with state {} and action { type: '@@redux/INIT' }
+// itemsReducer was called with state [] and action { type: '@@redux/INIT' }
 
 ```

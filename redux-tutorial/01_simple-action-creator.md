@@ -33,4 +33,4 @@ console.log(actionCreator())
 到目前为止,在我们的应用中有以下的数据流向
 > actionCreator -> Action
 
-前往下一章节:[02_about-state-and-meet-redux]()
+前往下一章节:[02_about-state-and-meet-redux](https://github.com/funkyLover/article/blob/master/redux-tutorial/02_about-state-and-meet-redux.md)

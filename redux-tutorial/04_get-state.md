@@ -96,4 +96,4 @@ console.log('store_3 state after initialization:', store_3.getState())
 
 现在我们可以开始在reducer中响应action了,接下来让我们聊聊有多个不同reducer的情况及如何把它们合并起来.
 
-前往下一章节:[05_combine-reducers]()
+前往下一章节:[05_combine-reducers](https://github.com/funkyLover/article/blob/master/redux-tutorial/05_combine-reducers.md)

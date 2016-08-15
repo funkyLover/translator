@@ -73,5 +73,5 @@
 
 就像上例的数据流向由`action`开始一样,我们也从`actions / action creators`来开始我们的教程
 
-前往下一章节:[01_simple-action-creator]()
+前往下一章节:[01_simple-action-creator](https://github.com/funkyLover/article/blob/master/redux-tutorial/01_simple-action-creator.md)
 

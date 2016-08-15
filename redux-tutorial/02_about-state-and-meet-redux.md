@@ -53,4 +53,4 @@ var store = createStore(() => {})
 // 这就能正常运行了
 ```
 
-前往下一章节:[03_simple-reducer]()
+前往下一章节:[03_simple-reducer](https://github.com/funkyLover/article/blob/master/redux-tutorial/03_simple_reducer.md)
